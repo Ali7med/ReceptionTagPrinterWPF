@@ -1,0 +1,35 @@
+﻿<Window x:Class="ReceptionTagPrinterWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Reception Tag Printer WPF" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Toolbar -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <TextBox x:Name="TxtName" Width="200" Margin="0,0,10,0" />
+            <Button Content="Print" Click="BtnPrint_Click" Width="100"/>
+            <Button Content="Load Clipboard" Click="BtnCrap_Click" Width="120" Margin="10,0,0,0"/>
+            <Button Content="Edit Design" Click="BtnEditDesign_Click" Width="120" Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <!-- DataGrid -->
+        <DataGrid x:Name="DGResult" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Extended">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="150"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Printer Controls -->
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,10,0,0">
+            <ComboBox x:Name="CBPrinters" Width="250"/>
+            <Button Content="Refresh" Click="BtnRefreshPrinter_Click" Width="100" Margin="10,0,0,0"/>
+            <Button Content="Print All" Click="BtnPrintDGV_Click" Width="100" Margin="10,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
