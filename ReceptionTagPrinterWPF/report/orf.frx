@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="01/01/2023" ReportInfo.Modified="01/01/2023" ReportInfo.CreatorVersion="2023.1.0" RightToLeft="true">
+  <Dictionary>
+    <TableDataSource Name="OrphanForm" ReferenceName="OrphanForm" DataType="System.Object" Enabled="true">
+      <!-- Personal Information -->
+      <Column Name="OrphanFullName" DataType="System.String"/>
+      <Column Name="MotherName" DataType="System.String"/>
+      <Column Name="MotherSocialStatus" DataType="System.String"/>
+      <Column Name="GrandmotherName" DataType="System.String"/>
+      <Column Name="Occupation" DataType="System.String"/>
+      
+      <!-- Birth Details -->
+      <Column Name="BirthDay" DataType="System.Int32"/>
+      <Column Name="BirthMonth" DataType="System.String"/>
+      <Column Name="BirthYear" DataType="System.Int32"/>
+      <Column Name="BirthPlace" DataType="System.String"/>
+      
+      <!-- Education -->
+      <Column Name="EducationLevel" DataType="System.String"/>
+      <Column Name="StudyStatus" DataType="System.String"/>
+      <Column Name="SchoolName" DataType="System.String"/>
+      <Column Name="SchoolPrincipal" DataType="System.String"/>
+      <Column Name="SchoolPhone" DataType="System.String"/>
+      
+      <!-- Civil Info -->
+      <Column Name="CivilIdNumber" DataType="System.String"/>
+      <Column Name="CivilIdIssuer" DataType="System.String"/>
+      <Column Name="NationalIdNumber" DataType="System.String"/>
+      
+      <!-- Address -->
+      <Column Name="CurrentAddress" DataType="System.String"/>
+      <Column Name="NearestLandmark" DataType="System.String"/>
+      <Column Name="HousingType" DataType="System.String"/>
+      <Column Name="Displaced" DataType="System.Boolean"/>
+      
+      <!-- Mukhtar -->
+      <Column Name="MukhtarName" DataType="System.String"/>
+      <Column Name="MukhtarPhone" DataType="System.String"/>
+      
+      <!-- Disability -->
+      <Column Name="HasDisability" DataType="System.Boolean"/>
+      <Column Name="DisabilityType" DataType="System.String"/>
+      
+      <!-- Deceased Parent -->
+      <Column Name="DeceasedParent" DataType="System.String"/>
+      <Column Name="DeathCause" DataType="System.String"/>
+      
+      <!-- Guardian -->
+      <Column Name="GuardianType" DataType="System.String"/>
+      <Column Name="GuardianName" DataType="System.String"/>
+      <Column Name="GuardianPhone" DataType="System.String"/>
+      <Column Name="GuardianDetails" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+
+  <ReportPage Name="Page1" PaperWidth="210" PaperHeight="297" LeftMargin="10" RightMargin="10">
+    <!-- Header -->
+    <PageHeaderBand Name="PageHeader1" Width="718.2" Height="80">
+      <TextObject Name="HeaderText" Left="150" Top="10" Width="400" Height="60" Text="أنا وكافل البيتيم كهاتين في الجنة" HorzAlign="Center" Font="Arial, 16pt, style=Bold" TextFill.Color="0, 0, 128"/>
+    </PageHeaderBand>
+
+    <!-- Personal Information -->
+    <DataBand Name="DataBand1" Top="84" Width="718.2" Height="1200" DataSource="OrphanForm">
+      <!-- Column 1: Left Side -->
+      <TextObject Name="lblOrphanName" Left="40" Top="30" Width="200" Height="20" Text="اسم البيتيم الرباعي واللقب:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="txtOrphanName" Left="250" Top="30" Width="400" Height="20" Text="[OrphanForm.OrphanFullName]" Font="Arial, 10pt" Border.Lines="Bottom"/>
+
+      <TextObject Name="lblMotherName" Left="40" Top="60" Width="200" Height="20" Text="اسم الإم الشلالي:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="txtMotherName" Left="250" Top="60" Width="400" Height="20" Text="[OrphanForm.MotherName]" Font="Arial, 10pt" Border.Lines="Bottom"/>
+
+      <TextObject Name="lblGrandmother" Left="40" Top="90" Width="200" Height="20" Text="اسم الجدة (للام):" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="txtGrandmother" Left="250" Top="90" Width="400" Height="20" Text="[OrphanForm.GrandmotherName]" Font="Arial, 10pt" Border.Lines="Bottom"/>
+
+      <!-- Occupation -->
+      <TextObject Name="lblOccupation" Left="40" Top="130" Width="200" Height="20" Text="المهنة:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="optHousewife" Left="250" Top="130" Width="80" Height="20" Text="ربة بيت" Font="Arial, 10pt"/>
+      <TextObject Name="optEmployee" Left="330" Top="130" Width="80" Height="20" Text="موظفة" Font="Arial, 10pt"/>
+      <TextObject Name="optBeneficiary" Left="410" Top="130" Width="80" Height="20" Text="مستفيدة" Font="Arial, 10pt"/>
+
+      <!-- Birth Details -->
+      <TextObject Name="lblBirthDate" Left="40" Top="170" Width="200" Height="20" Text="التولد:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="txtBirthDay" Left="250" Top="170" Width="50" Height="20" Text="[OrphanForm.BirthDay]" Font="Arial, 10pt" Border.Lines="Bottom"/>
+      <TextObject Name="txtBirthMonth" Left="310" Top="170" Width="50" Height="20" Text="[OrphanForm.BirthMonth]" Font="Arial, 10pt" Border.Lines="Bottom"/>
+      <TextObject Name="txtBirthYear" Left="370" Top="170" Width="50" Height="20" Text="[OrphanForm.BirthYear]" Font="Arial, 10pt" Border.Lines="Bottom"/>
+      <TextObject Name="txtBirthPlace" Left="430" Top="170" Width="220" Height="20" Text="[OrphanForm.BirthPlace]" Font="Arial, 10pt" Border.Lines="Bottom"/>
+
+      <!-- Education -->
+      <TextObject Name="lblEducation" Left="40" Top="210" Width="200" Height="20" Text="التحصيل الدراسي:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="optEducation1" Left="250" Top="210" Width="80" Height="20" Text="دون الابتدائية" Font="Arial, 10pt"/>
+      <TextObject Name="optEducation2" Left="330" Top="210" Width="80" Height="20" Text="ابتدائية" Font="Arial, 10pt"/>
+      <TextObject Name="optEducation3" Left="410" Top="210" Width="80" Height="20" Text="متوسط" Font="Arial, 10pt"/>
+      <TextObject Name="optEducation4" Left="490" Top="210" Width="80" Height="20" Text="اعدادي" Font="Arial, 10pt"/>
+
+      <!-- School Info -->
+      <TextObject Name="lblSchoolName" Left="40" Top="250" Width="200" Height="20" Text="اسم المدرسة:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="txtSchoolName" Left="250" Top="250" Width="400" Height="20" Text="[OrphanForm.SchoolName]" Font="Arial, 10pt" Border.Lines="Bottom"/>
+
+      <!-- Civil ID -->
+      <TextObject Name="lblCivilId" Left="40" Top="350" Width="200" Height="20" Text="رقم هوية الأحوال المدنية:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="txtCivilId" Left="250" Top="350" Width="400" Height="20" Text="[OrphanForm.CivilIdNumber]" Font="Arial, 10pt" Border.Lines="Bottom"/>
+
+      <!-- Address -->
+      <TextObject Name="lblAddress" Left="40" Top="450" Width="200" Height="20" Text="عنوان السكن الحالي:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="txtAddress" Left="250" Top="450" Width="400" Height="40" Text="[OrphanForm.CurrentAddress]" Font="Arial, 10pt" Border.Lines="Bottom"/>
+
+      <!-- Housing Type -->
+      <TextObject Name="lblHousing" Left="40" Top="510" Width="200" Height="20" Text="السكن:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="optHousing1" Left="250" Top="510" Width="60" Height="20" Text="ملك" Font="Arial, 10pt"/>
+      <TextObject Name="optHousing2" Left="310" Top="510" Width="60" Height="20" Text="رهن" Font="Arial, 10pt"/>
+      <TextObject Name="optHousing3" Left="370" Top="510" Width="60" Height="20" Text="ايجار" Font="Arial, 10pt"/>
+      <TextObject Name="optHousing4" Left="430" Top="510" Width="80" Height="20" Text="عشوائيات" Font="Arial, 10pt"/>
+      <TextObject Name="optHousing5" Left="510" Top="510" Width="80" Height="20" Text="دور دولة" Font="Arial, 10pt"/>
+
+      <!-- Displaced -->
+      <TextObject Name="lblDisplaced" Left="40" Top="550" Width="200" Height="20" Text="نزح:" Font="Arial, 10pt, style=Bold"/>
+      <CheckBoxObject Name="chkDisplacedYes" Left="250" Top="550" Width="20" Height="20" Checked="[OrphanForm.Displaced]"/>
+      <TextObject Name="lblYes1" Left="270" Top="550" Width="50" Height="20" Text="نعم" Font="Arial, 10pt"/>
+      <CheckBoxObject Name="chkDisplacedNo" Left="330" Top="550" Width="20" Height="20" Checked="Not [OrphanForm.Displaced]"/>
+      <TextObject Name="lblNo1" Left="350" Top="550" Width="50" Height="20" Text="كلا" Font="Arial, 10pt"/>
+
+      <!-- Disability -->
+      <TextObject Name="lblDisability" Left="40" Top="600" Width="200" Height="20" Text="ذوي الاحتياجات الخاصة:" Font="Arial, 10pt, style=Bold"/>
+      <CheckBoxObject Name="chkDisabilityYes" Left="250" Top="600" Width="20" Height="20" Checked="[OrphanForm.HasDisability]"/>
+      <TextObject Name="lblYes2" Left="270" Top="600" Width="50" Height="20" Text="نعم" Font="Arial, 10pt"/>
+      <CheckBoxObject Name="chkDisabilityNo" Left="330" Top="600" Width="20" Height="20" Checked="Not [OrphanForm.HasDisability]"/>
+      <TextObject Name="lblNo2" Left="350" Top="600" Width="50" Height="20" Text="كلا" Font="Arial, 10pt"/>
+      <TextObject Name="lblDisabilityType" Left="400" Top="600" Width="100" Height="20" Text="نوع الاعاقة:" Font="Arial, 10pt"/>
+      <TextObject Name="txtDisabilityType" Left="500" Top="600" Width="150" Height="20" Text="[OrphanForm.DisabilityType]" Font="Arial, 10pt" Border.Lines="Bottom"/>
+
+      <!-- Deceased Parent -->
+      <TextObject Name="lblDeceased" Left="40" Top="650" Width="200" Height="20" Text="المتوفي:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="optDeceased1" Left="250" Top="650" Width="60" Height="20" Text="الأب" Font="Arial, 10pt"/>
+      <TextObject Name="optDeceased2" Left="310" Top="650" Width="80" Height="20" Text="كلاهما" Font="Arial, 10pt"/>
+      <TextObject Name="lblDeathCause" Left="400" Top="650" Width="100" Height="20" Text="سبب الوفاة:" Font="Arial, 10pt"/>
+      <TextObject Name="txtDeathCause" Left="500" Top="650" Width="150" Height="20" Text="[OrphanForm.DeathCause]" Font="Arial, 10pt" Border.Lines="Bottom"/>
+
+      <!-- Guardian -->
+      <TextObject Name="lblGuardian" Left="40" Top="700" Width="200" Height="20" Text="الكفيل:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="optGuardian1" Left="250" Top="700" Width="60" Height="20" Text="لايوجد" Font="Arial, 10pt"/>
+      <TextObject Name="optGuardian2" Left="310" Top="700" Width="60" Height="20" Text="دولة" Font="Arial, 10pt"/>
+      <TextObject Name="optGuardian3" Left="370" Top="700" Width="80" Height="20" Text="مؤسسات" Font="Arial, 10pt"/>
+      <TextObject Name="optGuardian4" Left="450" Top="700" Width="60" Height="20" Text="أفراد" Font="Arial, 10pt"/>
+      <TextObject Name="lblGuardianName" Left="40" Top="730" Width="200" Height="20" Text="اسم الكفيل:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="txtGuardianName" Left="250" Top="730" Width="400" Height="20" Text="[OrphanForm.GuardianName]" Font="Arial, 10pt" Border.Lines="Bottom"/>
+    </DataBand>
+
+    <!-- Footer -->
+    <PageFooterBand Name="PageFooter1" Top="1328" Width="718.2" Height="120">
+      <TextObject Name="FooterText1" Left="20" Top="10" Width="678.2" Height="30" Text="* ترفق نسخة من (هوية الأحوال المدنية أو البطاقة الوطنية وشهادة الوفاة)" HorzAlign="Right" Font="Arial, 9pt" TextFill.Color="Gray"/>
+      <TextObject Name="FooterText2" Left="20" Top="40" Width="678.2" Height="30" Text="* التقييد بأعمار الإيتام من ١٨ يوم سنة" HorzAlign="Right" Font="Arial, 9pt" TextFill.Color="Gray"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

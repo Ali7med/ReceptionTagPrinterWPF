@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" TextQuality="Regular" ReportInfo.Description="Badge 70x38mm" ReportInfo.Created="05/19/2025 09:04:33" ReportInfo.Modified="05/19/2025 09:04:52" ReportInfo.CreatorVersion="2024.2.8.0">
+  <Dictionary>
+    <Parameter Name="id" DataType="System.String" AsString=""/>
+    <Parameter Name="name" DataType="System.String" AsString=""/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="70" PaperHeight="38" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="264.6" Height="107.4">
+      <TextObject Name="Text1" Top="5" Width="255.1" Height="25" Text="[id]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text2" Top="35" Width="255.1" Height="60" Text="[name]" HorzAlign="Center" VertAlign="Center" Font="Arial, 16pt, style=Bold"/>
+    </ReportTitleBand>
+  </ReportPage>
+</Report>
